@@ -184,12 +184,12 @@ ul,ol{margin:0;padding:0;list-style:none}
 .cal .month{flex:0 0 clamp(280px,46%,520px);scroll-snap-align:start}
 .btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;background:var(--green);color:var(--on-green);padding:10px 18px;border-radius:99px;font-weight:500;font-size:15px;text-decoration:none;transition:background .2s}
 .btn:hover{background:var(--pool)}
-.month{padding:12px 12px 22px;display:grid;gap:14px;align-content:start}
-.month .arch{aspect-ratio:16/10;width:100%}
+.month{padding:0;overflow:hidden;display:grid;gap:14px;align-content:start}
+.month .arch{aspect-ratio:4/3;width:100%;border-radius:0}
 .arch img.pos-top{object-position:center 22%}
 .arch img.pos-brunch{object-position:center 45%}
 .arch img.pos-noel{object-position:center 40%}
-.month-txt{padding:4px 10px 0;display:grid;gap:4px;align-content:start}
+.month-txt{padding:4px 22px 24px;display:grid;gap:4px;align-content:start}
 .month h3{font-size:24px;line-height:1.15;color:var(--green)}
 .month ul{display:grid;gap:12px;margin-top:10px}
 .month li{display:grid;gap:2px;padding-top:12px;border-top:1px solid var(--line)}
@@ -302,8 +302,8 @@ ul,ol{margin:0;padding:0;list-style:none}
   .prio-name{grid-template-columns:64px minmax(0,1fr)}
   .prio-name .arch{width:64px}
   .cal .month{flex-basis:85%}
-  .month{padding:10px 10px 18px}
-  .month-txt{padding:2px 6px 0}
+  .month{padding:0}
+  .month-txt{padding:2px 18px 20px}
   .extra{grid-template-columns:minmax(0,1fr);padding:20px}
   .also{padding:20px}
   .also ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
