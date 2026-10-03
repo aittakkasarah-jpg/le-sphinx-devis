@@ -111,7 +111,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 .now-stats div{background:var(--card);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow);display:grid}
 .now-stats b{font-family:var(--display);font-weight:400;font-size:clamp(20px,2.2vw,26px);line-height:1.2;color:var(--green)}
 .now-stats span{font-size:14px;color:var(--soft);overflow-wrap:anywhere}
-.friction{background:var(--pool-bg);border-radius:14px;padding:16px 20px;display:grid;gap:4px;font-size:15.5px;overflow-wrap:anywhere}
+.friction{background:var(--pool-bg);border-radius:14px;padding:16px 20px;display:grid;gap:8px;font-size:15.5px;overflow-wrap:anywhere}
 .friction a{color:var(--pool);font-weight:500;text-decoration:underline;text-underline-offset:2px}
 .friction a:hover{color:var(--ink)}
 .feed{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
@@ -167,6 +167,25 @@ ul,ol{margin:0;padding:0;list-style:none}
 .place .where{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--pool);font-weight:500}
 .place h3{font-size:22px;line-height:1.2;color:var(--green)}
 .place p{font-size:15px;color:var(--soft)}
+.prio{display:grid;gap:14px}
+.prio-row{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1.4fr) minmax(0,1fr);gap:24px;align-items:center;padding:14px 22px 14px 14px}
+.prio-name{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:center}
+.prio-name .arch{aspect-ratio:3/4;width:76px}
+.prio-name h3{font-size:21px;line-height:1.2;color:var(--green);margin-top:2px}
+.prio-name .eyebrow{font-size:12px}
+.prio .lbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;color:var(--soft);margin-bottom:4px}
+.prio-do p:not(.lbl){font-size:15.5px;color:var(--soft)}
+.prio-res{background:var(--pool-bg);border-radius:10px;padding:12px 16px}
+.prio-res p:not(.lbl){font-size:15.5px;color:var(--ink);font-weight:500}
+.cal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.month{padding:12px 12px 22px;display:grid;gap:14px;align-content:start}
+.month .arch{aspect-ratio:4/3;width:100%}
+.month-txt{padding:4px 10px 0;display:grid;gap:4px;align-content:start}
+.month h3{font-size:24px;line-height:1.15;color:var(--green)}
+.month ul{display:grid;gap:12px;margin-top:10px}
+.month li{display:grid;gap:2px;padding-top:12px;border-top:1px solid var(--line)}
+.month li b{font-weight:600;font-size:16px}
+.month li span{font-size:14.5px;color:var(--soft)}
 .events{margin-top:20px;background:var(--mist);border-radius:14px;padding:22px 24px;display:grid;grid-template-columns:minmax(0,13rem) repeat(3,minmax(0,1fr));gap:14px 24px;align-items:start}
 .events h3{font-size:21px;line-height:1.2;color:var(--green)}
 .events div{display:grid;gap:2px}
@@ -212,6 +231,12 @@ ul,ol{margin:0;padding:0;list-style:none}
 @media (max-width:960px){
   .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
   .also ul{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .prio-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 20px;padding:16px}
+  .prio-name{grid-column:1 / -1}
+  .cal{grid-template-columns:minmax(0,1fr);gap:14px}
+  .month{grid-template-columns:200px minmax(0,1fr);gap:20px;padding:12px}
+  .month .arch{aspect-ratio:3/4}
+  .month-txt{padding:6px 6px 6px 0}
   .place{grid-template-columns:140px minmax(0,1fr);align-items:center;gap:16px;padding:12px}
   .place .arch{aspect-ratio:3/4}
   .place .meta{padding:0}
@@ -252,6 +277,12 @@ ul,ol{margin:0;padding:0;list-style:none}
   .place h3{font-size:19px}
   .place p{font-size:14.5px}
   .events{grid-template-columns:minmax(0,1fr);padding:20px}
+  .prio-row{grid-template-columns:minmax(0,1fr)}
+  .prio-name{grid-template-columns:64px minmax(0,1fr)}
+  .prio-name .arch{width:64px}
+  .month{grid-template-columns:minmax(0,1fr);gap:12px;padding:10px 10px 18px}
+  .month .arch{aspect-ratio:16/10}
+  .month-txt{padding:2px 6px 0}
   .extra{grid-template-columns:minmax(0,1fr);padding:20px}
   .also{padding:20px}
   .also ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
@@ -315,8 +346,9 @@ ul,ol{margin:0;padding:0;list-style:none}
           <div><b>3</b><span>comptes Instagram différents</span></div>
         </div>
         <div class="friction">
-          <p class="eyebrow">Une friction à supprimer</p>
-          <p>Le Sphinx existe sous trois comptes : <a href="https://www.instagram.com/lesphinxmohammedia/" target="_blank" rel="noopener">@lesphinxmohammedia</a>, <a href="https://www.instagram.com/lesphinxhotelmohammedia/" target="_blank" rel="noopener">@lesphinxhotelmohammedia</a> et <a href="https://www.instagram.com/la_pergola_beachclub/" target="_blank" rel="noopener">@la_pergola_beachclub</a>. Un client ne sait pas lequel suivre ni où réserver, et votre audience est dispersée. Nous réunissons tout sous un seul nom et un seul compte Instagram.</p>
+          <p class="eyebrow">Une offre à rendre lisible</p>
+          <p>Le Sphinx a plusieurs atouts à vendre : l'hôtel, son restaurant, la piscine lorsqu'elle est ouverte et la possibilité d'organiser des événements. Le problème n'est pas seulement de publier davantage, mais de rendre l'offre lisible : où découvrir le lieu, où voir le menu du midi, quel compte suivre pour les événements et comment réserver ?</p>
+          <p>Aujourd'hui, elle est répartie entre trois comptes : <a href="https://www.instagram.com/lesphinxmohammedia/" target="_blank" rel="noopener">@lesphinxmohammedia</a>, <a href="https://www.instagram.com/lesphinxhotelmohammedia/" target="_blank" rel="noopener">@lesphinxhotelmohammedia</a> et <a href="https://www.instagram.com/la_pergola_beachclub/" target="_blank" rel="noopener">@la_pergola_beachclub</a>. Nous réunissons tout sous un seul nom et un seul compte Instagram.</p>
         </div>
       </div>
       <div>
@@ -363,26 +395,70 @@ ul,ol{margin:0;padding:0;list-style:none}
 
   <section class="block" id="contenu">
     <div class="head">
-      <p class="eyebrow">Hôtel · Restaurant · Piscine · Soirées</p>
+      <p class="eyebrow">Hôtel · Restaurant · Piscine · Événements</p>
       <h2>Chaque espace utilisé et réservé au maximum</h2>
-      <p>Le levier, ce sont les événements : chaque espace a les siens, et la communication les remplit.</p>
+      <p>Trois priorités, et un levier commun : les événements.</p>
     </div>
-    <div class="grid4 places">
-      <article class="card place">
-        <div class="arch"><img src="img/ig/ig-09.jpg" alt="Le jardin et la façade blanche du Sphinx"></div>
-        <div class="meta"><p class="where">L'hôtel</p><h3>Remplir les chambres</h3><p>Escapades d'une nuit, séjours en famille, chambres réservées autour de vos événements et pour les proches que l'on reçoit à Mohammedia.</p></div>
+    <div class="prio">
+      <article class="card prio-row">
+        <div class="prio-name"><div class="arch"><img src="img/ig/ig-03.jpg" alt="Une table servie au restaurant du Sphinx"></div><div><p class="eyebrow">Priorité 1</p><h3>Déjeuner en semaine</h3></div></div>
+        <div class="prio-do"><p class="lbl">Ce qu'on met en place</p><p>Formule midi identifiable, photos des plats, menu publié chaque semaine, stories avant le service, contact direct pour réserver et démarche auprès des entreprises voisines.</p></div>
+        <div class="prio-res"><p class="lbl">Résultat recherché</p><p>Faire venir régulièrement les personnes qui travaillent autour.</p></div>
       </article>
-      <article class="card place">
-        <div class="arch"><img src="img/ig/ig-03.jpg" alt="Une table servie au restaurant du Sphinx"></div>
-        <div class="meta"><p class="where">Le restaurant</p><h3>Remplir les tables, midi et soir</h3><p>Déjeuners pour les actifs en semaine, repas en famille, dîners à thème comme Vins du monde.</p></div>
+      <article class="card prio-row">
+        <div class="prio-name"><div class="arch"><img src="img/ig/ig-11.jpg" alt="Soirée Vins du monde au Sphinx"></div><div><p class="eyebrow">Priorité 2</p><h3>Événements</h3></div></div>
+        <div class="prio-do"><p class="lbl">Ce qu'on met en place</p><p>Calendrier de 3 événements par mois d'octobre à mars, avec page ou lien de réservation et communication avant, pendant et après chaque date.</p></div>
+        <div class="prio-res"><p class="lbl">Résultat recherché</p><p>Générer des réservations et faire découvrir le lieu à de nouveaux publics.</p></div>
       </article>
-      <article class="card place">
-        <div class="arch"><img src="img/ig/ig-06.jpg" alt="Au bord de la piscine du Sphinx"></div>
-        <div class="meta"><p class="where">La piscine</p><h3>Remplir les transats</h3><p>Journées piscine en famille, moments entre amis, événements en plein air aux beaux jours.</p></div>
+      <article class="card prio-row">
+        <div class="prio-name"><div class="arch"><img src="img/ig/ig-06.jpg" alt="Au bord de la piscine du Sphinx"></div><div><p class="eyebrow">Priorité 3</p><h3>Hôtel et piscine</h3></div></div>
+        <div class="prio-do"><p class="lbl">Ce qu'on met en place</p><p>Contenus sur les chambres, le cadre et les offres de séjour ; piscine mise en avant uniquement lorsqu'elle est ouverte.</p></div>
+        <div class="prio-res"><p class="lbl">Résultat recherché</p><p>Transformer la visibilité en demandes de réservation.</p></div>
       </article>
-      <article class="card place">
-        <div class="arch"><img src="img/ig/ig-11.jpg" alt="Soirée Vins du monde au Sphinx"></div>
-        <div class="meta"><p class="where">Le bar et le club</p><h3>Remplir les soirées</h3><p>Soirées à thème, DJ, afterworks : de quoi sortir à Mohammedia sans aller à Casablanca.</p></div>
+    </div>
+  </section>
+
+  <section class="block" id="calendrier">
+    <div class="head">
+      <p class="eyebrow">Exemple de calendrier</p>
+      <h2>Un fil conducteur par mois, d'octobre à décembre</h2>
+      <p>Chaque mois a son thème et ses événements, adaptés à la saison.</p>
+    </div>
+    <div class="cal">
+      <article class="card month">
+        <div class="arch"><img src="img/ig/ig-05.jpg" alt="La piscine du Sphinx entre les palmiers"></div>
+        <div class="month-txt">
+          <p class="eyebrow">Octobre</p>
+          <h3>Profiter de la piscine</h3>
+          <ul>
+            <li><b>Sunset Yoga</b><span>Yoga en fin de journée, boisson fraîche et moment détente autour de la piscine.</span></li>
+            <li><b>Poolside Afterwork</b><span>Un jeudi soir avec DJ, mocktails et petites assiettes.</span></li>
+            <li><b>Sunday Brunch &amp; Pool</b><span>Brunch du dimanche avec accès piscine, si les conditions le permettent le jour J.</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="card month">
+        <div class="arch"><img src="img/ig/ig-07.jpg" alt="Le salon du Sphinx et ses tableaux"></div>
+        <div class="month-txt">
+          <p class="eyebrow">Novembre</p>
+          <h3>Installer des habitudes</h3>
+          <ul>
+            <li><b>Afterwork at Scene</b><span>Chaque jeudi : musique, boissons et tapas.</span></li>
+            <li><b>Creative Sunday</b><span>Atelier peinture, céramique ou création de bougies, suivi d'un goûter.</span></li>
+            <li><b>Business Lunch at Scene</b><span>Une formule déjeuner pensée pour les équipes et les repas d'affaires.</span></li>
+          </ul>
+        </div>
+      </article>
+      <article class="card month">
+        <div class="arch"><img src="img/ig/ig-10.jpg" alt="Un plat servi au restaurant du Sphinx"></div>
+        <div class="month-txt">
+          <p class="eyebrow">Décembre</p>
+          <h3>Réunir les groupes</h3>
+          <ul>
+            <li><b>Secret Santa Dinner</b><span>Dîner festif avec échange de cadeaux et budget cadeau fixé à l'avance.</span></li>
+            <li><b>Winter Raclette Night</b><span>Première soirée raclette, conviviale et sur réservation.</span></li>
+          </ul>
+        </div>
       </article>
     </div>
     <div class="events">
