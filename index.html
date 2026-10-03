@@ -174,9 +174,18 @@ ul,ol{margin:0;padding:0;list-style:none}
 .prio-do p:not(.lbl){font-size:15.5px;color:var(--soft)}
 .prio-res{background:var(--pool-bg);border-radius:10px;padding:12px 16px}
 .prio-res p:not(.lbl){font-size:15.5px;color:var(--ink);font-weight:500}
-.cal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cal-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:20px}
+.cal-nav{display:flex;gap:10px}
+.cal-btn{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--green);display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow);transition:background .2s,color .2s,opacity .2s}
+.cal-btn:hover:not(:disabled){background:var(--green);color:var(--on-green)}
+.cal-btn:disabled{opacity:.35;cursor:default}
+.cal{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:4px 2px 16px;margin:-4px -2px 0}
+.cal::-webkit-scrollbar{display:none}
+.cal .month{flex:0 0 clamp(280px,46%,520px);scroll-snap-align:start}
+.btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;background:var(--green);color:var(--on-green);padding:10px 18px;border-radius:99px;font-weight:500;font-size:15px;text-decoration:none;transition:background .2s}
+.btn:hover{background:var(--pool)}
 .month{padding:12px 12px 22px;display:grid;gap:14px;align-content:start}
-.month .arch{aspect-ratio:4/3;width:100%}
+.month .arch{aspect-ratio:16/10;width:100%}
 .month-txt{padding:4px 10px 0;display:grid;gap:4px;align-content:start}
 .month h3{font-size:24px;line-height:1.15;color:var(--green)}
 .month ul{display:grid;gap:12px;margin-top:10px}
@@ -245,10 +254,6 @@ ul,ol{margin:0;padding:0;list-style:none}
   .also ul{grid-template-columns:repeat(3,minmax(0,1fr))}
   .prio-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 20px;padding:16px}
   .prio-name{grid-column:1 / -1}
-  .cal{grid-template-columns:minmax(0,1fr);gap:14px}
-  .month{grid-template-columns:200px minmax(0,1fr);gap:20px;padding:12px}
-  .month .arch{aspect-ratio:3/4}
-  .month-txt{padding:6px 6px 6px 0}
   .place{grid-template-columns:140px minmax(0,1fr);align-items:center;gap:16px;padding:12px}
   .place .arch{aspect-ratio:3/4}
   .place .meta{padding:0}
@@ -293,8 +298,8 @@ ul,ol{margin:0;padding:0;list-style:none}
   .prio-row{grid-template-columns:minmax(0,1fr)}
   .prio-name{grid-template-columns:64px minmax(0,1fr)}
   .prio-name .arch{width:64px}
-  .month{grid-template-columns:minmax(0,1fr);gap:12px;padding:10px 10px 18px}
-  .month .arch{aspect-ratio:16/10}
+  .cal .month{flex-basis:85%}
+  .month{padding:10px 10px 18px}
   .month-txt{padding:2px 6px 0}
   .extra{grid-template-columns:minmax(0,1fr);padding:20px}
   .also{padding:20px}
@@ -423,7 +428,7 @@ ul,ol{margin:0;padding:0;list-style:none}
       </article>
       <article class="card prio-row">
         <div class="prio-name"><div class="arch"><img src="img/ig/ig-11.jpg" alt="Soirée Vins du monde au Sphinx"></div><div><p class="eyebrow">Priorité 2</p><h3>Événements</h3></div></div>
-        <div class="prio-do"><p class="lbl">Ce qu'on met en place</p><p>Calendrier de 2 événements par mois d'octobre à mars, en plus des soirées musique déjà en place, avec page ou lien de réservation et communication avant, pendant et après chaque date.</p></div>
+        <div class="prio-do"><p class="lbl">Ce qu'on met en place</p><p>Calendrier de 2 événements par mois d'octobre à mars, en plus des soirées musique déjà en place, avec page ou lien de réservation et communication avant, pendant et après chaque date.</p><a class="btn" href="#calendrier">Voir le calendrier des événements <span aria-hidden="true">→</span></a></div>
         <div class="prio-res"><p class="lbl">Résultat recherché</p><p>Générer des réservations et faire découvrir le lieu à de nouveaux publics.</p></div>
       </article>
       <article class="card prio-row">
@@ -435,12 +440,11 @@ ul,ol{margin:0;padding:0;list-style:none}
   </section>
 
   <section class="block" id="calendrier">
-    <div class="head">
+    <div class="cal-head">
       <p class="eyebrow">Exemple de calendrier</p>
-      <h2>Un fil conducteur par mois, d'octobre à décembre</h2>
-      <p>Deux événements par mois, en plus des soirées musique déjà en place. Chaque mois a son thème, adapté à la saison.</p>
+      <div class="cal-nav"><button class="cal-btn" type="button" data-dir="-1" aria-label="Mois précédent"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="cal-btn" type="button" data-dir="1" aria-label="Mois suivant"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
     </div>
-    <div class="cal">
+    <div class="cal" id="cal-track">
       <article class="card month">
         <div class="arch"><img src="img/ig/ig-05.jpg" alt="La piscine du Sphinx entre les palmiers"></div>
         <div class="month-txt">
@@ -601,3 +605,28 @@ ul,ol{margin:0;padding:0;list-style:none}
     <span>Proposition préparée par Sarah Ait · Mohammedia, 2 octobre 2026</span>
   </div>
 </footer>
+
+<script>
+(function(){
+  var track = document.getElementById('cal-track');
+  var btns = document.querySelectorAll('.cal-btn');
+  if (!track || !btns.length) return;
+  function step(){
+    var card = track.querySelector('.month');
+    return card ? card.getBoundingClientRect().width + 20 : track.clientWidth;
+  }
+  function maj(){
+    var max = track.scrollWidth - track.clientWidth - 2;
+    btns[0].disabled = track.scrollLeft <= 2;
+    btns[1].disabled = track.scrollLeft >= max;
+  }
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      track.scrollBy({ left: step() * Number(b.dataset.dir), behavior: 'smooth' });
+    });
+  });
+  track.addEventListener('scroll', maj, { passive: true });
+  window.addEventListener('resize', maj);
+  maj();
+})();
+</script>
