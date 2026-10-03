@@ -290,7 +290,7 @@ ul,ol{margin:0;padding:0;list-style:none}
   .top-in{height:56px}
   .nav{display:none}
   .wrap{padding-inline:18px}
-  .block{margin-top:72px}
+  .block{margin-top:60px}
   .head{margin-bottom:22px}
   .head h2,.now-h2{font-size:clamp(28px,8vw,34px)}
   .hero-in{padding-block:96px 72px}
@@ -316,19 +316,34 @@ ul,ol{margin:0;padding:0;list-style:none}
   .month{padding:0}
   .month-txt{padding:2px 18px 20px}
   .extra{grid-template-columns:minmax(0,1fr);padding:20px}
-  .comm-img{width:100%;max-width:240px}
+  .comm-img{width:100%;max-width:170px}
   .also{padding:20px}
   .also ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
   .band{padding:36px 20px;border-radius:18px}
-  .band blockquote{font-size:clamp(22px,6.4vw,28px)}
+  .band blockquote{font-size:clamp(21px,5.8vw,25px)}
+  .band-result{font-size:16px}
+  .chain span{font-size:14.5px}
+  .chain b{font-size:21px}
   .chain{grid-template-columns:minmax(0,1fr);margin-top:32px;row-gap:22px}
-  .plan b.n{font-size:34px}
+  /* Plan : chiffre à gauche, texte à droite, pour raccourcir la page */
+  .plan .grid4 .card{grid-template-columns:76px minmax(0,1fr);column-gap:14px;row-gap:4px;align-items:start;padding:18px 18px 18px 16px}
+  .plan b.n{grid-row:1 / span 2;font-size:32px;line-height:1}
+  .plan b.n small{display:block;margin:4px 0 0;font-size:12.5px;line-height:1.2}
+  .plan .grid4 .card h3{grid-column:2}
+  .plan .grid4 .card:has(.chip) h3{padding-right:62px}
+  .plan .grid4 .card p{grid-column:2;font-size:14.5px}
+  .plan .chip{top:16px;right:14px;font-size:11px;padding:3px 9px}
   .aud{padding:28px 18px;border-radius:18px}
   .aud-who{grid-template-columns:minmax(0,1fr);gap:14px}
   .avatar{width:68px;height:68px}
-  .reel{grid-template-columns:minmax(0,1fr);padding:14px}
-  .reel-img{max-width:180px;justify-self:center;width:100%}
-  .reel-txt h3{font-size:21px}
+  /* Reel : vignette à gauche du titre, chiffres en dessous */
+  .reel{grid-template-columns:104px minmax(0,1fr);gap:12px 16px;padding:14px;align-items:center}
+  .reel-txt{display:contents}
+  .reel .eyebrow{grid-column:2;align-self:end}
+  .reel-txt h3{grid-column:2;align-self:start;font-size:19px}
+  .reel-img{grid-column:1;grid-row:1 / span 2;width:104px;max-width:none}
+  .reel-stats{grid-column:1 / -1}
+  .reel .ig-link{grid-column:1 / -1}
   .reel-stats b{font-size:24px}
   .stats{gap:10px}
   .stats div{padding:14px}
@@ -425,7 +440,7 @@ ul,ol{margin:0;padding:0;list-style:none}
       <article class="card prio-row">
         <div class="prio-name"><div class="arch"><img src="img/ig/ig-03.jpg" alt="Une table servie au restaurant du Sphinx"></div><div><h3>Restaurant</h3></div></div>
         <div class="prio-do"><p class="lbl">Ce que je mets en place</p><p>Photos des plats et de l'ambiance, menu publié chaque semaine, formule midi identifiable pour les actifs, dîners et brunchs mis en avant, contact direct pour réserver et démarche auprès des entreprises voisines.</p></div>
-        <div class="prio-res"><p class="lbl">Résultat recherché</p><p>Remplir les tables midi et soir, avec une clientèle locale qui revient.</p></div>
+        <div class="prio-res"><p class="lbl">Résultat recherché</p><p>Remplir les tables midi et soir, avec une clientèle locale qui revient. Menu déjeuner pour les entreprises autour.</p></div>
       </article>
       <article class="card prio-row">
         <div class="prio-name"><div class="arch"><img src="img/ig/ig-11.jpg" alt="Soirée Vins du monde au Sphinx"></div><div><h3>Événements</h3></div></div>
