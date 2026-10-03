@@ -149,6 +149,11 @@ ul,ol{margin:0;padding:0;list-style:none}
 .extra .eyebrow{grid-column:1 / -1}
 .extra h3{font-size:22px;line-height:1.2;color:var(--green)}
 .extra p:not(.eyebrow){font-size:15.5px;color:var(--soft)}
+.also{margin-top:18px;background:var(--card);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow);display:grid;gap:16px}
+.also ul{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px 22px}
+.also li{display:grid;gap:4px;align-content:start}
+.also b{font-weight:600;font-size:16px;line-height:1.3;color:var(--green)}
+.also span{font-size:14.5px;line-height:1.5;color:var(--soft)}
 .six{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;font-size:15px}
 .six .lbl{color:var(--soft);margin-right:4px}
 .six .t{background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px 12px}
@@ -204,6 +209,7 @@ ul,ol{margin:0;padding:0;list-style:none}
 
 @media (max-width:960px){
   .grid4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .also ul{grid-template-columns:repeat(3,minmax(0,1fr))}
   .events{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .events h3{grid-column:1 / -1}
 }
@@ -229,6 +235,7 @@ ul,ol{margin:0;padding:0;list-style:none}
   .place p{font-size:14px}
   .events{grid-template-columns:minmax(0,1fr)}
   .extra{grid-template-columns:minmax(0,1fr)}
+  .also ul{grid-template-columns:minmax(0,1fr)}
   .band{padding:40px 22px;border-radius:18px}
   .chain{grid-template-columns:minmax(0,1fr)}
   .quote td:last-child{white-space:normal;width:36%}
@@ -365,6 +372,16 @@ ul,ol{margin:0;padding:0;list-style:none}
       <h3>Des propositions d'événements</h3>
       <p>Soirées à thème, événements en journée, déjeuners pour les actifs : nous vous proposons des idées d'événements adaptées au lieu et à la saison, puis nous les faisons connaître.</p>
     </div>
+    <div class="also">
+      <p class="eyebrow">Également inclus, chaque mois</p>
+      <ul>
+        <li><b>Stratégie</b><span>Un plan de communication pensé pour vos objectifs et vos temps forts.</span></li>
+        <li><b>Optimisation et correction</b><span>Ce qui fonctionne est renforcé, ce qui ne fonctionne pas est corrigé.</span></li>
+        <li><b>Veille concurrentielle</b><span>Ce que font les adresses premium autour de vous, pour garder une longueur d'avance.</span></li>
+        <li><b>Création de design</b><span>Visuels, affiches d'événements et couvertures aux couleurs du Sphinx.</span></li>
+        <li><b>Retouche photos et vidéos</b><span>Chaque image est retouchée et chaque vidéo montée avant publication.</span></li>
+      </ul>
+    </div>
     <div class="six">
       <span class="lbl">Sur 6 mois :</span>
       <span class="t">26 publications</span>
@@ -401,7 +418,7 @@ ul,ol{margin:0;padding:0;list-style:none}
       <table class="quote">
         <thead><tr><th>Prestation</th><th>Prix</th></tr></thead>
         <tbody>
-          <tr><td><b>Communication Instagram et soirées</b><small>1 à 2 tournages, 1 publication par semaine, 2 séquences de stories par semaine, propositions d'événements</small></td><td>6&nbsp;000&nbsp;MAD / mois</td></tr>
+          <tr><td><b>Communication Instagram et soirées</b><small>1 à 2 tournages, 1 publication par semaine, 2 séquences de stories par semaine, propositions d'événements, stratégie, veille concurrentielle, design, retouche photos et vidéos</small></td><td>6&nbsp;000&nbsp;MAD / mois</td></tr>
           <tr><td><b>Vidéo en collaboration</b><small>1 par mois, publiée sur le compte de Sarah</small></td><td class="off">Offerte</td></tr>
           <tr><td><b>Publicité sponsorisée</b><small>Conseillée, réglée directement par l'hôtel à Meta</small></td><td class="soft">Non incluse</td></tr>
         </tbody>
