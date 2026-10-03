@@ -149,6 +149,10 @@ ul,ol{margin:0;padding:0;list-style:none}
 .extra .eyebrow{grid-column:1 / -1}
 .extra h3{font-size:22px;line-height:1.2;color:var(--green)}
 .extra p:not(.eyebrow){font-size:15.5px;color:var(--soft)}
+.comm{grid-template-columns:minmax(0,1fr) 200px;align-items:center;gap:24px}
+.comm-txt{display:grid;gap:6px;align-content:center}
+.comm p.src{font-size:13.5px;margin-top:4px}
+.comm-img{width:200px;border-radius:10px;box-shadow:var(--shadow)}
 .also{margin-top:18px;background:var(--card);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow);display:grid;gap:16px}
 .also ul{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px 22px}
 .also li{display:grid;gap:4px;align-content:start}
@@ -306,6 +310,7 @@ ul,ol{margin:0;padding:0;list-style:none}
   .month{padding:0}
   .month-txt{padding:2px 18px 20px}
   .extra{grid-template-columns:minmax(0,1fr);padding:20px}
+  .comm-img{width:100%;max-width:240px}
   .also{padding:20px}
   .also ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
   .band{padding:36px 20px;border-radius:18px}
@@ -384,9 +389,6 @@ ul,ol{margin:0;padding:0;list-style:none}
           <img src="img/ig/ig-01.jpg" alt="Publication du Sphinx : la piscine">
           <img src="img/ig/ig-02.jpg" alt="Publication du Sphinx : le salon">
           <img src="img/ig/ig-03.jpg" alt="Publication du Sphinx : une table servie">
-          <img src="img/ig/ig-04.jpg" alt="Publication du Sphinx : le jardin">
-          <img src="img/ig/ig-05.jpg" alt="Publication du Sphinx : la piscine et les palmiers">
-          <img src="img/ig/ig-06.jpg" alt="Publication du Sphinx : au bord de la piscine">
         </div>
       </div>
     </div>
@@ -537,10 +539,14 @@ ul,ol{margin:0;padding:0;list-style:none}
         <div><b>69&nbsp;%</b><span>a entre 25 et 44 ans</span></div>
       </div>
       <p class="src">Source : statistiques Instagram de mon compte, 3 août 2026.</p>
-      <div class="extra">
-        <p class="eyebrow">Une communauté déjà active</p>
-        <h3>Des événements qui ont déjà leur public</h3>
-        <p>J'organise déjà des événements sur mon compte personnel, avec une communauté qui y participe. Vos événements profitent de cette audience dès le premier mois.</p>
+      <div class="extra comm">
+        <div class="comm-txt">
+          <p class="eyebrow">Une communauté déjà active</p>
+          <h3>Des événements qui ont déjà leur public</h3>
+          <p>J'organise déjà des événements sur mon compte personnel, avec une communauté qui y participe. Vos événements profitent de cette audience dès le premier mois.</p>
+          <p class="src">Exemple d'événement que j'organise : RESET, le 18 octobre 2026.</p>
+        </div>
+        <img class="comm-img" src="img/event-reset.png" alt="Affiche de l'événement RESET, 18 octobre 2026">
       </div>
       <div class="reel">
         <a class="reel-img" href="https://www.instagram.com/sarah_autourdumonde/reel/Ddts4pSoATz/" target="_blank" rel="noopener"><img src="img/sarah-reel-sphinx.jpg" alt="Mon Reel tourné au Sphinx, au bord de la piscine"></a>
