@@ -136,9 +136,6 @@ ul,ol{margin:0;padding:0;list-style:none}
 .chain li::before{content:"";position:absolute;top:-7px;left:0;width:12px;height:12px;border-radius:50%;background:var(--pool-hi)}
 .chain b{font-family:var(--display);font-weight:400;font-size:24px}
 .chain span{font-size:15px;color:var(--on-green-soft)}
-.band-notes{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;margin-top:40px;padding-top:28px;border-top:1px solid color-mix(in srgb,var(--on-green) 18%,transparent)}
-.band-notes p{font-size:15.5px;color:var(--on-green-soft)}
-.band-notes b{color:var(--on-green);font-weight:500;display:block;margin-bottom:4px;font-size:16.5px}
 
 /* Plan */
 .plan .card{display:grid;gap:6px;align-content:start;position:relative}
@@ -200,6 +197,21 @@ ul,ol{margin:0;padding:0;list-style:none}
 .stats b{font-family:var(--display);font-weight:400;font-size:clamp(30px,3.4vw,40px);line-height:1.1;color:var(--green)}
 .stats span{font-size:14.5px;color:var(--soft)}
 .src{font-size:13.5px;color:var(--soft)}
+.aud-who{display:grid;grid-template-columns:96px minmax(0,1fr);gap:24px;align-items:center}
+.avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:4px solid var(--card)}
+.aud-lead{color:var(--soft);max-width:640px}
+.ig-link{justify-self:start;font-weight:500;color:var(--pool);text-decoration:underline;text-underline-offset:3px}
+.ig-link:hover{color:var(--ink)}
+.reel{display:grid;grid-template-columns:190px minmax(0,1fr);gap:28px;align-items:center;background:var(--card);border-radius:14px;padding:16px;margin-top:8px}
+.reel-img{display:block;border-radius:10px;overflow:hidden;aspect-ratio:9/16}
+.reel-img img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.reel-img:hover img{transform:scale(1.03)}
+.reel-txt{display:grid;gap:12px;align-content:center}
+.reel-txt h3{font-size:24px;line-height:1.2;color:var(--green)}
+.reel-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.reel-stats div{background:var(--pool-bg);border-radius:10px;padding:12px 14px;display:grid;gap:2px}
+.reel-stats b{font-family:var(--display);font-weight:400;font-size:28px;line-height:1.1;color:var(--green)}
+.reel-stats span{font-size:13.5px;color:var(--soft)}
 
 /* Devis */
 .quote-card{padding:32px clamp(20px,4vw,40px)}
@@ -248,8 +260,9 @@ ul,ol{margin:0;padding:0;list-style:none}
   .now{grid-template-columns:minmax(0,1fr);gap:28px}
   .grid3{grid-template-columns:minmax(0,1fr)}
   .chain{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:26px}
-  .band-notes{grid-template-columns:minmax(0,1fr)}
   .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reel-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reel{grid-template-columns:170px minmax(0,1fr);gap:22px}
   .terms{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:620px){
@@ -291,6 +304,12 @@ ul,ol{margin:0;padding:0;list-style:none}
   .chain{grid-template-columns:minmax(0,1fr);margin-top:32px;row-gap:22px}
   .plan b.n{font-size:34px}
   .aud{padding:28px 18px;border-radius:18px}
+  .aud-who{grid-template-columns:minmax(0,1fr);gap:14px}
+  .avatar{width:68px;height:68px}
+  .reel{grid-template-columns:minmax(0,1fr);padding:14px}
+  .reel-img{max-width:180px;justify-self:center;width:100%}
+  .reel-txt h3{font-size:21px}
+  .reel-stats b{font-size:24px}
   .stats{gap:10px}
   .stats div{padding:14px}
   .stats b{font-size:28px}
@@ -374,9 +393,6 @@ ul,ol{margin:0;padding:0;list-style:none}
         <li><b>Réserver</b><span>Stories, carrousels et événements transforment l'envie en réservation : une chambre, une table, une journée piscine.</span></li>
         <li><b>Fidéliser</b><span>Déjeuners, événements et soirées réguliers donnent une raison de revenir, et font de vos clients des habitués.</span></li>
       </ol>
-      <div class="band-notes">
-        <p><b>Un contenu premium attire une clientèle premium.</b>L'image du compte fait naturellement le tri sur la clientèle que vous visez.</p>
-      </div>
     </div>
   </section>
 
@@ -407,7 +423,7 @@ ul,ol{margin:0;padding:0;list-style:none}
       </article>
       <article class="card prio-row">
         <div class="prio-name"><div class="arch"><img src="img/ig/ig-11.jpg" alt="Soirée Vins du monde au Sphinx"></div><div><p class="eyebrow">Priorité 2</p><h3>Événements</h3></div></div>
-        <div class="prio-do"><p class="lbl">Ce qu'on met en place</p><p>Calendrier de 3 événements par mois d'octobre à mars, avec page ou lien de réservation et communication avant, pendant et après chaque date.</p></div>
+        <div class="prio-do"><p class="lbl">Ce qu'on met en place</p><p>Calendrier de 2 événements par mois d'octobre à mars, en plus des soirées musique déjà en place, avec page ou lien de réservation et communication avant, pendant et après chaque date.</p></div>
         <div class="prio-res"><p class="lbl">Résultat recherché</p><p>Générer des réservations et faire découvrir le lieu à de nouveaux publics.</p></div>
       </article>
       <article class="card prio-row">
@@ -422,7 +438,7 @@ ul,ol{margin:0;padding:0;list-style:none}
     <div class="head">
       <p class="eyebrow">Exemple de calendrier</p>
       <h2>Un fil conducteur par mois, d'octobre à décembre</h2>
-      <p>Chaque mois a son thème et ses événements, adaptés à la saison.</p>
+      <p>Deux événements par mois, en plus des soirées musique déjà en place. Chaque mois a son thème, adapté à la saison.</p>
     </div>
     <div class="cal">
       <article class="card month">
@@ -432,7 +448,6 @@ ul,ol{margin:0;padding:0;list-style:none}
           <h3>Profiter de la piscine</h3>
           <ul>
             <li><b>Sunset Yoga</b><span>Yoga en fin de journée, boisson fraîche et moment détente autour de la piscine.</span></li>
-            <li><b>Poolside Afterwork</b><span>Un jeudi soir avec DJ, mocktails et petites assiettes.</span></li>
             <li><b>Sunday Brunch &amp; Pool</b><span>Brunch du dimanche avec accès piscine, si les conditions le permettent le jour J.</span></li>
           </ul>
         </div>
@@ -443,7 +458,6 @@ ul,ol{margin:0;padding:0;list-style:none}
           <p class="eyebrow">Novembre</p>
           <h3>Installer des habitudes</h3>
           <ul>
-            <li><b>Afterwork at Scene</b><span>Chaque jeudi : musique, boissons et tapas.</span></li>
             <li><b>Creative Sunday</b><span>Atelier peinture, céramique ou création de bougies, suivi d'un goûter.</span></li>
             <li><b>Business Lunch at Scene</b><span>Une formule déjeuner pensée pour les équipes et les repas d'affaires.</span></li>
           </ul>
@@ -507,11 +521,15 @@ ul,ol{margin:0;padding:0;list-style:none}
 
   <section class="block" id="audience">
     <div class="aud">
-      <div class="head">
-        <p class="eyebrow">La vidéo en collaboration</p>
-        <h2>Une audience déjà à Mohammedia, et chez les MRE</h2>
-        <p>Mohammedia est la première ville de l'audience de Sarah, devant Casablanca (13,8&nbsp;%). La France arrive juste après le Maroc.</p>
+      <div class="aud-who">
+        <img class="avatar" src="img/sarah-profil.jpg" alt="Sarah Ait">
+        <div class="head">
+          <p class="eyebrow">La vidéo en collaboration</p>
+          <h2>Créatrice de contenu sur Mohammedia avec une audience premium engagée</h2>
+          <a class="ig-link" href="https://www.instagram.com/sarah_autourdumonde/" target="_blank" rel="noopener">@sarah_autourdumonde</a>
+        </div>
       </div>
+      <p class="aud-lead">Mohammedia est la première ville de l'audience de Sarah, devant Casablanca (13,8&nbsp;%). La France arrive juste après le Maroc.</p>
       <div class="stats">
         <div><b>1,5&nbsp;M</b><span>vues sur 30 jours</span></div>
         <div><b>22,7&nbsp;%</b><span>de l'audience vit à Mohammedia</span></div>
@@ -519,6 +537,21 @@ ul,ol{margin:0;padding:0;list-style:none}
         <div><b>69&nbsp;%</b><span>a entre 25 et 44 ans</span></div>
       </div>
       <p class="src">Source : statistiques Instagram du compte de Sarah, 3 août 2026.</p>
+      <div class="reel">
+        <a class="reel-img" href="https://www.instagram.com/sarah_autourdumonde/reel/Ddts4pSoATz/" target="_blank" rel="noopener"><img src="img/sarah-reel-sphinx.jpg" alt="Le Reel de Sarah tourné au Sphinx, au bord de la piscine"></a>
+        <div class="reel-txt">
+          <p class="eyebrow">Déjà tourné au Sphinx</p>
+          <h3>Un Reel de Sarah, publié le 25 septembre 2026</h3>
+          <div class="reel-stats">
+            <div><b>1&nbsp;164</b><span>interactions</span></div>
+            <div><b>499</b><span>partages</span></div>
+            <div><b>291</b><span>enregistrements</span></div>
+            <div><b>918</b><span>comptes ayant interagi</span></div>
+          </div>
+          <p class="src">Et 332 mentions J'aime, 32 commentaires. Statistiques Instagram du Reel, au 3 octobre 2026.</p>
+          <a class="ig-link" href="https://www.instagram.com/sarah_autourdumonde/reel/Ddts4pSoATz/" target="_blank" rel="noopener">Voir le Reel</a>
+        </div>
+      </div>
     </div>
   </section>
 
