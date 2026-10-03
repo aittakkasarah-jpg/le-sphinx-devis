@@ -243,6 +243,10 @@ ul,ol{margin:0;padding:0;list-style:none}
 .quote td small{font-size:14.5px;color:var(--soft)}
 .quote td:last-child{white-space:nowrap;font-weight:600}
 .quote .off{color:var(--pool)}
+.services{margin:10px 0 2px;display:grid;grid-template-columns:1fr 1fr;gap:6px 22px}
+.services li{position:relative;padding-left:16px;font-size:15px;line-height:1.4;color:var(--ink)}
+.services li::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;border-radius:50%;background:var(--pool)}
+.services strong{font-weight:600}
 .total{margin-top:22px;background:var(--green);color:var(--on-green);border-radius:14px;padding:20px 24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 20px}
 .total span{font-size:16px;color:var(--on-green-soft)}
 .total b{font-family:var(--body);font-weight:600;letter-spacing:-.01em;font-size:clamp(30px,3.6vw,40px);color:var(--on-green)}
@@ -341,6 +345,7 @@ ul,ol{margin:0;padding:0;list-style:none}
   .quote td:last-child{text-align:left;margin-top:6px;white-space:normal}
   .total{padding:18px 20px}
   .total b{font-size:clamp(26px,7.5vw,34px)}
+  .services{grid-template-columns:minmax(0,1fr)}
 }
 @media (max-width:420px){
   .also ul{grid-template-columns:minmax(0,1fr)}
@@ -562,7 +567,7 @@ ul,ol{margin:0;padding:0;list-style:none}
       <table class="quote">
         <thead><tr><th>Prestation</th><th>Prix</th></tr></thead>
         <tbody>
-          <tr><td><b>Community Management</b><small>1 tournage par mois, 1 publication par semaine, idées d'événements et recherche de prestataires, stratégie, veille concurrentielle, design, retouche photos et vidéos</small></td><td>6&nbsp;000&nbsp;MAD HT / mois</td></tr>
+          <tr><td><b>Community Management</b><ul class="services"><li><strong>1 tournage</strong> par mois sur place</li><li><strong>1 publication</strong> par semaine, Reel ou carrousel</li><li><strong>2 idées d'événements</strong> par mois</li><li><strong>Recherche de prestataires</strong> si besoin</li><li><strong>Stratégie</strong> de communication</li><li><strong>Optimisation et correction</strong> chaque mois</li><li><strong>Veille</strong> concurrentielle</li><li><strong>Création</strong> de design</li><li><strong>Retouche</strong> photos et vidéos</li></ul></td><td>6&nbsp;000&nbsp;MAD HT / mois</td></tr>
           <tr><td><b>Vidéo en collaboration</b><small>1 par mois, publiée sur mon propre compte</small></td><td class="off">Offerte</td></tr>
         </tbody>
       </table>
@@ -582,7 +587,7 @@ ul,ol{margin:0;padding:0;list-style:none}
           </ol>
         </div>
       </div>
-      <a class="btn btn-dl" href="devis-officiel-le-sphinx.pdf?v=3" download="Devis officiel Le Sphinx.pdf">Télécharger le devis officiel (PDF) <span aria-hidden="true">↓</span></a>
+      <a class="btn btn-dl" href="devis-officiel-le-sphinx.pdf?v=4" download="Devis officiel Le Sphinx.pdf">Télécharger le devis officiel (PDF) <span aria-hidden="true">↓</span></a>
     </div>
   </section>
 
